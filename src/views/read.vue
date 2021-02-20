@@ -65,6 +65,9 @@ import md5 from "../plugins/md5.js";
 import "gitalk/dist/gitalk.css";
 import Gitalk from "gitalk";
 import "highlight.js/styles/vs2015.css";
+import "owo/dist/OwO.min.css";
+import "owo/dist/OwO.min.css";
+import OwO from "owo/dist/OwO.min.js";
 const highlightjs = require("highlight.js");
 export default {
 	data() {
@@ -99,6 +102,20 @@ export default {
 			});
 		},
 		showModal: function() {
+			setTimeout(() => {
+				let ElOwOBtnTemplate = document.createElement("template");
+				ElOwOBtnTemplate.innerHTML = `<button class="gt-btn gt-btn-preview OwO"><span class="gt-btn-text">OωO</span></button>`;
+				let ElOwOBtn = document.querySelector(".gt-header-controls").appendChild(ElOwOBtnTemplate.content.firstChild);
+				var OwO_demo = new OwO({
+					logo: "OωO表情",
+					container: ElOwOBtn,
+					target: document.querySelector(".gt-header-textarea"),
+					api: "https://img.qwq.globalslb.net/js/OwO.json",
+					position: "down",
+					width: "400px",
+					maxHeight: "250px",
+				});
+			}, 3000);
 			document.querySelectorAll(".modal .article-content pre code").forEach((block) => {
 				highlightjs.highlightBlock(block);
 			});
@@ -426,6 +443,43 @@ export default {
 			overflow: hidden;
 			padding: 0 40px 20px;
 			background: rgba(255, 255, 255, 0.8);
+			.OwO {
+				padding: 0;
+				white-space: unset;
+				border: none;
+				border-bottom: 1px solid #6190e8 !important;
+			}
+			.OwO-open {
+				border-bottom: none !important;
+			}
+			.OwO-logo {
+				border: 1px solid #6190e8 !important;
+				border-bottom: none !important;
+				padding: 0 !important;
+				line-height: unset !important;
+				height: auto !important;
+				color: #6190e8 !important;
+				font-size: 0.75em !important;
+				width: 77px;
+				span {
+					margin: 1em 1.25em;
+					display: block;
+				}
+			}
+			.OwO-body {
+				margin-left: -323px;
+				margin-top: 9px;
+				border-top-right-radius: 0;
+				border: 1px solid #6190e8;
+			}
+			.OwO-items {
+				overflow-x: hidden;
+				text-align: right !important;
+				color: #6c6c6c;
+				&::-webkit-scrollbar {
+					display: block;
+				}
+			}
 			.gt-header-textarea {
 				resize: none !important;
 				max-width: 100% !important;
