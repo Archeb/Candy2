@@ -480,6 +480,9 @@ export default {
 					display: block;
 				}
 			}
+			.OwO .OwO-body .OwO-bar {
+				height: unset !important;
+			}
 			.gt-header-textarea {
 				resize: none !important;
 				max-width: 100% !important;
@@ -758,6 +761,18 @@ export default {
 				}
 				.extra-info input {
 					min-width: 0;
+				}
+				.OwO-logo {
+					width: 100%;
+				}
+				.OwO-body {
+					margin-left: 0;
+					margin-top: 9px;
+					border-top-right-radius: 0;
+					width: 100% !important;
+				}
+				.OwO-items {
+					text-align: center !important;
 				}
 			}
 		}
