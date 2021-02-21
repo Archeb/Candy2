@@ -553,7 +553,7 @@ export default {
 			}
 			.gt-comment-admin .gt-comment-avatar:after {
 				content: "";
-				background-position: -4px -52px;
+				background-position: -73px -52px;
 				margin: 30px 0 0 -15px;
 				width: 20px;
 				height: 20px;
