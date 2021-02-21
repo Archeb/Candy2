@@ -113,6 +113,12 @@ export default {
 						document.querySelector(".article-comment").style.padding = "0 40px 20px";
 					}
 				});
+				document.querySelectorAll(".gt-btn").forEach((btn) =>
+					btn.addEventListener("click", (e) => {
+						var event = new InputEvent("input");
+						document.querySelector(".gt-header-textarea").dispatchEvent(event);
+					})
+				);
 				var OwO_demo = new OwO({
 					logo: "OωO表情",
 					container: ElOwOBtn,
