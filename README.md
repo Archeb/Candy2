@@ -3,10 +3,10 @@
 [![Candy2.png](https://i.loli.net/2021/02/20/uzfTSEHPlFOeR4r.png)](https://qwq.moe/)
 
 <p align="center">
-  <a title="Vue Version" target="_blank" href="https://vuejs.org/"><img alt="Hexo Version" src="https://img.shields.io/badge/Vue-%3E%3D%202.0-orange?style=flat"></a>
-  <a title="Blog Platform" target="_blank" href="https://github.com/Archeb/Candy2"><img alt="Node Version" src="https://img.shields.io/badge/Any%20Blog%20System-you%20want-yellowgreen?style=flat"></a>
-  <a title="License" target="_blank" href="https://github.com/Archeb/Candy2/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Archeb/Candy2.svg?style=flat&"></a>
-  <a title="demo" target="_blank" href="https://qwq.moe/"><img alt="demo" src="https://img.shields.io/badge/Demo-click%20here-blue?style=flat"></a>
+  <a title="Vue Version" target="_blank" href="https://vuejs.org/"><img alt="Hexo Version" src="https://img.shields.io/badge/Vue-%3E%3D%202.0-orange?style=flat-square"></a>
+  <a title="Blog Platform" target="_blank" href="https://github.com/Archeb/Candy2"><img alt="Node Version" src="https://img.shields.io/badge/Any%20Blog%20System-you%20want-yellowgreen?style=flat-square"></a>
+  <a title="License" target="_blank" href="https://github.com/Archeb/Candy2/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Archeb/Candy2.svg?style=flat-square"></a>
+  <a title="demo" target="_blank" href="https://qwq.moe/"><img alt="demo" src="https://img.shields.io/badge/Demo-click%20here-blue?style=flat-square"></a>
 </p>
 
 ## 快速开始

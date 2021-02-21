@@ -15,6 +15,7 @@
 		"owo": "^1.0.2",
 		"vue": "^2.6.11",
 		"vue-append": "^2.0.1",
+		"vue-cool-lightbox": "^2.7.1",
 		"vue-router": "^3.2.0"
 	},
 	"devDependencies": {

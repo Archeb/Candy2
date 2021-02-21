@@ -58,6 +58,7 @@
 				-->
 			</div>
 		</div>
+		<CoolLightBox :items="imageItems" :index="imageIndex" @close="imageIndex = null"> </CoolLightBox>
 	</div>
 </template>
 <script>
@@ -68,11 +69,29 @@ import "highlight.js/styles/vs2015.css";
 import "owo/dist/OwO.min.css";
 import "owo/dist/OwO.min.css";
 import OwO from "owo/dist/OwO.min.js";
+import CoolLightBox from "vue-cool-lightbox";
+import "vue-cool-lightbox/dist/vue-cool-lightbox.min.css";
 const highlightjs = require("highlight.js");
 export default {
+	components: {
+		CoolLightBox,
+	},
 	data() {
 		this.getCategoryData(this.$route.path).then((newData) => {
 			this.articleData = newData;
+			// 把图片添加进灯箱
+			setTimeout(() => {
+				let imgIndex = 0;
+				document.querySelectorAll(".modal .bean-read .article-content .kg-image-card").forEach((imgCard) => {
+					let imgTitle = imgCard.querySelector("figcaption") ? imgCard.querySelector("figcaption").innerHTML : "";
+					this.imageItems.push({ src: imgCard.querySelector("img").src, title: imgTitle });
+					imgCard.querySelector("img").dataset.imgIndex = imgIndex;
+					imgCard.querySelector("img").addEventListener("click", (e) => {
+						this.imageIndex = e.target.dataset.imgIndex;
+					});
+					imgIndex++;
+				});
+			}, 1);
 			document.title = this.articleData.title;
 			var gitalk = new Gitalk({
 				clientID: "63db5c393a7f6b8c649c",
@@ -87,7 +106,11 @@ export default {
 			gitalk.render("gitalk-container");
 			setTimeout(this.showModal, 1);
 		});
-		return { articleData: { feature_image: "", primary_author: {} } };
+		return {
+			articleData: { feature_image: "", primary_author: {} },
+			imageItems: [],
+			imageIndex: null,
+		};
 	},
 	mounted: function() {},
 	methods: {
@@ -717,6 +740,9 @@ export default {
 			}
 		}
 	}
+}
+.cool-lightbox__slide {
+	opacity: 1 !important;
 }
 @media (max-width: 991px) {
 	.modal {
