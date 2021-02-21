@@ -106,6 +106,13 @@ export default {
 				let ElOwOBtnTemplate = document.createElement("template");
 				ElOwOBtnTemplate.innerHTML = `<button class="gt-btn gt-btn-preview OwO"><span class="gt-btn-text">OωO</span></button>`;
 				let ElOwOBtn = document.querySelector(".gt-header-controls").appendChild(ElOwOBtnTemplate.content.firstChild);
+				ElOwOBtn.addEventListener("click", (e) => {
+					if (ElOwOBtn.classList.value.indexOf("OwO-open") !== -1) {
+						document.querySelector(".article-comment").style.padding = "0 40px 160px";
+					} else {
+						document.querySelector(".article-comment").style.padding = "0 40px 20px";
+					}
+				});
 				var OwO_demo = new OwO({
 					logo: "OωO表情",
 					container: ElOwOBtn,
@@ -127,11 +134,19 @@ export default {
 			}, 1);
 			this.$refs.modal.querySelector(".bean-read").scrollTop = 0;
 			this.$refs.modal.querySelector(".bean-read").style.transform = "translate(0,0)";
-			document.querySelector(".modal").addEventListener("click", (e) => {
+			document.querySelector(".modal").addEventListener("mousedown", (e) => {
 				if (e.target.classList.contains("modal")) {
 					this.exitModal();
 				}
 			});
+			let escapeModal;
+			escapeModal = (e) => {
+				if (e.code == "Escape") {
+					this.exitModal();
+					document.documentElement.removeEventListener("keyup", escapeModal);
+				}
+			};
+			document.documentElement.addEventListener("keyup", escapeModal);
 		},
 		exitModal: function() {
 			if (window.loadFromList) {
