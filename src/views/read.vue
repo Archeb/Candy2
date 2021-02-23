@@ -146,9 +146,9 @@ export default {
 					logo: "OωO表情",
 					container: ElOwOBtn,
 					target: document.querySelector(".gt-header-textarea"),
-					api: "https://img.qwq.globalslb.net/js/OwO.json",
+					api: "/OwO.json",
 					position: "down",
-					width: "400px",
+					width: "415px",
 					maxHeight: "250px",
 				});
 			}, 3000);
@@ -473,6 +473,9 @@ export default {
 				max-width: unset;
 				width: calc(100% + 80px);
 			}
+			.kg-image-card img {
+				cursor: zoom-in;
+			}
 			.kg-width-wide {
 				margin: 0;
 			}
@@ -511,7 +514,7 @@ export default {
 				}
 			}
 			.OwO-body {
-				margin-left: -323px;
+				margin-left: -338px;
 				margin-top: 9px;
 				border-top-right-radius: 0;
 				border: 1px solid #6190e8;
@@ -526,6 +529,12 @@ export default {
 			}
 			.OwO .OwO-body .OwO-bar {
 				height: unset !important;
+			}
+			.OwO-item img {
+				max-width: unset !important;
+			}
+			.OwO-item {
+				max-width: unset !important;
 			}
 			.gt-header-textarea {
 				resize: none !important;
