@@ -34,7 +34,6 @@ export default {
 		horizontalWheel(this.$refs.container);
 		if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
 			document.querySelector(".contained-containers").style.marginLeft = "0px";
-			if (navigator.userAgent.search("EdgiOS") < 0) document.querySelector("body").style.setProperty("--safariBottomMargin", "100px");
 		}
 
 		Vue.set(this.categoryData, this.currentCb, []);
@@ -244,7 +243,10 @@ export default {
 	src: url("//at.alicdn.com/t/font_2102450_3a3j75o7rrp.eot");
 	src: url("//at.alicdn.com/t/font_2102450_3a3j75o7rrp.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_2102450_3a3j75o7rrp.woff2") format("woff2"), url("//at.alicdn.com/t/font_2102450_3a3j75o7rrp.woff") format("woff"), url("//at.alicdn.com/t/font_2102450_3a3j75o7rrp.ttf") format("truetype"), url("//at.alicdn.com/t/font_2102450_3a3j75o7rrp.svg#iconfont") format("svg");
 }
-
+html {
+	height: 100%;
+	position: absolute;
+}
 body {
 	margin: 0;
 	--mybg: url(./assets/img/bg_pc.png);
@@ -252,7 +254,7 @@ body {
 	background-image: var(--mybg);
 	background-size: cover;
 	background-position: center;
-	height: 100vh;
+	height: 100%;
 	background-attachment: fixed;
 	width: 100vw;
 	overflow: hidden;
@@ -267,7 +269,7 @@ a {
 	overflow-x: scroll;
 
 	color: #333333;
-	height: 100vh;
+	height: 100%;
 	align-items: center;
 	overflow-y: hidden;
 
@@ -278,7 +280,7 @@ a {
 	}
 
 	.contained-containers {
-		height: 100vh;
+		height: 100%;
 		opacity: 0;
 		transform: translate(0, 0); /* 魔法 */
 		will-change: transform;
@@ -286,7 +288,7 @@ a {
 		flex-direction: column;
 
 		.contained-beans {
-			height: 100vh;
+			height: 100%;
 			display: flex;
 			transition-timing-function: cubic-bezier(0.68, 0, 0.33, 1) !important;
 			position: fixed;
@@ -296,7 +298,7 @@ a {
 }
 
 .bg-mask {
-	height: 100vh;
+	height: 100%;
 	width: 100vw;
 	left: 0;
 	position: absolute;
@@ -336,7 +338,7 @@ a {
 	body {
 		width: 100vw;
 		--mybg: url(./assets/img/bg_mobile.png);
-		height: 100vh;
+		height: 100%;
 	}
 	.container {
 		flex-direction: column;
@@ -415,7 +417,7 @@ a {
 
 	.bean-space {
 		width: 1px !important;
-		height: 140px !important;
+		height: 40px !important;
 	}
 }
 @supports not (backdrop-filter: blur(15px)) {

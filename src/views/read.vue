@@ -1,5 +1,8 @@
 <template>
 	<div class="modal" ref="modal">
+		<!--
+		<div class="bean bean-toc">AAAAA</div>
+		-->
 		<div class="bean bean-read" :class="{ 'no-backdrop-blur-read': this.$parent.lowPerformance }" style="transform: translate(0px, 100vh);">
 			<div class="modal-close" v-on:click="exitModal">×</div>
 			<div class="article-cover" :style="'background-image: url(\'' + articleData.feature_image + '\');'">
@@ -146,7 +149,7 @@ export default {
 					logo: "OωO表情",
 					container: ElOwOBtn,
 					target: document.querySelector(".gt-header-textarea"),
-					api: "/OwO.json",
+					api: "/js/OwO.json",
 					position: "down",
 					width: "415px",
 					maxHeight: "250px",
@@ -198,7 +201,7 @@ export default {
 
 	overflow-y: hidden;
 	transition: background-color 0.5s;
-	height: 100vh;
+	height: 100%;
 	z-index: 3;
 
 	::-webkit-scrollbar {
@@ -214,6 +217,11 @@ export default {
 		font-size: 2em;
 		text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 		color: rgba(255, 255, 255, 0.8);
+	}
+	.bean-toc {
+		position: fixed;
+		margin: 50px;
+		padding: 20px;
 	}
 	.bean-read {
 		background-color: rgba(255, 255, 255, 0.9);
@@ -762,7 +770,7 @@ export default {
 			width: 100%;
 			margin: 0;
 			border-radius: 0;
-			height: 100vh;
+			height: 100%;
 
 			.article-cover {
 				height: 72vw;
