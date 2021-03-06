@@ -47,8 +47,10 @@ export default {
 				//隐藏的tag只能通过指定url进入
 				if (e.tags.some((el) => hideTags.indexOf(el.slug) != -1 && this.$route.params.slug != el.slug)) e.hidden = true;
 				e.dynamicAdded = true;
-				e.dynamicAnimationDelay = dynamicAnimationDelay;
-				dynamicAnimationDelay += 150;
+				if (!e.hidden) {
+					e.dynamicAnimationDelay = dynamicAnimationDelay;
+					dynamicAnimationDelay += 150;
+				}
 			});
 			this.categoryData[this.currentCb] = this.categoryData[this.currentCb].concat(newData);
 			// 计算给滚动的留白

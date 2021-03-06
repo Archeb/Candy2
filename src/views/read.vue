@@ -68,7 +68,7 @@
 import md5 from "../plugins/md5.js";
 import "gitalk/dist/gitalk.css";
 import Gitalk from "gitalk";
-import "highlight.js/styles/vs2015.css";
+import "highlight.js/styles/agate.css";
 import "owo/dist/OwO.min.css";
 import "owo/dist/OwO.min.css";
 import OwO from "owo/dist/OwO.min.js";
@@ -437,10 +437,14 @@ export default {
 			}
 
 			pre {
+				border-radius: 20px;
+				overflow: hidden;
+				box-shadow: 5px 5px 10px rgba(32, 32, 32, 0.1);
 				::-webkit-scrollbar {
 					height: 9px;
 					width: 9px;
 					background-color: transparent;
+					display: block !important;
 				}
 
 				::-webkit-scrollbar-thumb {
@@ -457,25 +461,26 @@ export default {
 				}
 
 				code {
-					max-height: 410px;
-					background-color: #1e1e1e !important;
+					max-height: 350px;
 					margin: 0 !important;
-					border-radius: 2px;
-					padding: 10px 15px !important;
+					padding: 15px 20px !important;
 				}
 			}
 
 			code {
-				font-family: Consolas, "Microsoft YaHei Light";
+				font-family: "monospace", Consolas, "Microsoft YaHei Light";
 				font-size: 14px;
-				background-color: #4a4a4a;
+				background-color: #333333;
 				color: white;
 				padding: 2px 4px;
+				line-height: 1.8em;
 				border-radius: 3px;
-				font-size: 0.85rem;
+				font-size: 14px;
 				margin: 0 5px;
-				box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15), 1px 1px 8px rgba(0, 0, 0, 0.15);
 			}
+
+			// GhostBlog 样式
+
 			.kg-width-full {
 				margin-left: -40px;
 				max-width: unset;
@@ -491,6 +496,107 @@ export default {
 				text-align: center;
 				color: #888888;
 				font-size: 0.9em;
+			}
+			.kg-image-card {
+				text-align: center;
+			}
+			.kg-bookmark-card {
+				width: unset;
+
+				box-shadow: 5px 5px 10px rgba(32, 32, 32, 0.1);
+				box-sizing: border-box;
+				background: #fff;
+				border-radius: 20px;
+				overflow: hidden;
+			}
+			.kg-bookmark-container {
+				display: flex !important;
+				box-shadow: none !important;
+			}
+			.kg-bookmark-container:hover {
+				color: unset !important;
+			}
+			.kg-bookmark-container:active {
+				transform: none !important;
+			}
+
+			.koenig-editor__editor .kg-bookmark-container {
+				display: flex;
+				color: #343f44;
+				text-decoration: none;
+				box-shadow: none;
+				min-height: 120px;
+			}
+
+			.kg-bookmark-content {
+				display: block;
+				flex-direction: column;
+				flex-grow: 1;
+				flex-basis: 100%;
+				align-items: flex-start;
+				justify-content: flex-start;
+				padding: 20px;
+			}
+
+			.kg-bookmark-title {
+				font-size: 1.3rem;
+				line-height: 1.5em;
+				font-weight: 600;
+			}
+
+			.kg-bookmark-description {
+				display: -webkit-box;
+				font-size: 0.9rem;
+				line-height: 1.5em;
+				margin-top: 3px;
+				color: #54666d;
+				font-weight: 400;
+				max-height: 44px;
+				overflow-y: hidden;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+
+			.kg-bookmark-thumbnail {
+				position: relative;
+				flex-grow: 1;
+				min-width: 33%;
+			}
+
+			.kg-bookmark-thumbnail img {
+				width: 100%;
+				height: 100%;
+				-o-object-fit: cover;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+			}
+
+			.kg-bookmark-metadata {
+				color: #343f44;
+				font-size: 1rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				margin-top: 22px;
+			}
+
+			.kg-bookmark-icon {
+				width: 20px;
+				height: 20px;
+				margin-right: 6px;
+			}
+
+			.kg-bookmark-publisher {
+				display: none;
+			}
+
+			.kg-bookmark-author {
+				color: #54666d;
+				font-weight: 400;
 			}
 		}
 
@@ -797,6 +903,7 @@ export default {
 					max-width: unset;
 					width: calc(100% + 40px);
 					font-size: 14px;
+					border-radius: 0;
 				}
 				.kg-width-full {
 					margin-left: -20px;
