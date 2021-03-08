@@ -12,7 +12,7 @@ renderer.code = (code, language) => {
 */
 window.objectCache = {};
 const apiUrl = "https://blogapi.qwq.moe:24022/ghost/api/v3/";
-const apiKey = "63f48af3de52e44a14e417ed44";
+const apiKey = "333019cc7dce99f8914e54a002";
 
 export default {
 	install: function(Vue, opitions) {
