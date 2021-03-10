@@ -213,10 +213,10 @@ export default {
 			let gl = canvas.getContext("experimental-webgl");
 			let debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
 
-			let highEndGraphicsCards = ["Apple", "Vega", "RX 480", "RX 580", "RX 590", "RX 57", "RX 56", "R9 Fury", "Radeon Pro", "Pro Duo", "VII", "R9 29", "R9 39", "R9 28", "Titan", "RTX", "MX 350", "MX350", "GTX 16", "GTX 10", "GTX 9", "GTX 7", "GTX 6"];
+			let highEndGraphicsCards = ["apple", "vega", "rx 480", "rx 580", "rx 590", "rx 57", "rx 56", "r9 fury", "radeon pro", "pro duo", "vii", "r9 29", "r9 39", "r9 28", "titan", "rtx", "mx 350", "mx350", "gtx 16", "gtx 10", "gtx 9", "gtx 7", "gtx 6"];
 			if (
 				!highEndGraphicsCards.some((card) => {
-					return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL).indexOf(card) >= 0;
+					return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL).toLowerCase().indexOf(card) >= 0;
 				}) &&
 				!this.mobileMode // 手机浏览器自带优化
 			) {
