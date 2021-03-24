@@ -213,10 +213,15 @@ export default {
 			let gl = canvas.getContext("experimental-webgl");
 			let debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
 
-			let highEndGraphicsCards = ["apple", "vega", "rx 480", "rx 580", "rx 590", "rx 57", "rx 56", "r9 fury", "radeon pro", "pro duo", "vii", "r9 29", "r9 39", "r9 28", "titan", "rtx", "mx 350", "mx350", "gtx 16", "gtx 10", "gtx 9", "gtx 7", "gtx 6"];
+			let highEndGraphicsCards = ["apple", "vega", "rx", "radeon pro", "pro duo", "vii", "r9", "titan", "rtx", "mx 350", "mx350", "gtx"];
 			if (
 				!highEndGraphicsCards.some((card) => {
-					return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL).toLowerCase().indexOf(card) >= 0;
+					return (
+						gl
+							.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+							.toLowerCase()
+							.indexOf(card) >= 0
+					);
 				}) &&
 				!this.mobileMode // 手机浏览器自带优化
 			) {
@@ -224,7 +229,7 @@ export default {
 				setTimeout(() => {
 					console.log("您浏览本网站使用的显卡是：" + gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL));
 					console.log("如果这是您的全新高性能独显，请留言给我更新显卡列表");
-					this.$Notify("提示", "浏览器没有检测到独显，已关闭毛玻璃特效", "background-color:#fb7299");
+					this.$Notify("提示", "已启用节能模式，按F12查看详细信息", "background-color:#fb7299");
 				}, 100);
 			}
 		},

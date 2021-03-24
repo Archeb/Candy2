@@ -12,7 +12,8 @@ renderer.code = (code, language) => {
 */
 window.objectCache = {};
 const apiUrl = "https://blogapi.qwq.moe:24022/ghost/api/v3/";
-const apiKey = "333019cc7dce99f8914e54a002";
+const apiKey = "63f48af3de52e44a14e417ed44";
+const replace_pair = [{ from: "https://blogapi.qwq.moe:24022/content/images", to: "https://azure.globalslb.net/qwq/content/images" }];
 
 export default {
 	install: function(Vue, opitions) {
@@ -22,6 +23,10 @@ export default {
 					item.type = "blocks";
 				} else {
 					item.type = "article";
+				}
+				for (var pair of replace_pair) {
+					item.html = item.html.replace(new RegExp(pair.from, "gm"), pair.to);
+					if (item.feature_image) item.feature_image = item.feature_image.replace(new RegExp(pair.from, "gm"), pair.to);
 				}
 				item.postTime = timeAgo.format(new Date(item.published_at));
 				let dateObj = new Date(item.published_at);
