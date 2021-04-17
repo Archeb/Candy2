@@ -238,11 +238,10 @@ export default {
 
 		.article-title {
 			color: #f0f0f0;
-			padding: 25px 30px;
+			padding: 25px 30px 40px;
 			text-shadow: 0 0 5px rgba(35, 35, 35, 0.5), 0 0 5px rgba(35, 35, 35, 0.5);
 			font-size: 32px;
-			text-overflow: ellipsis;
-			overflow: hideen;
+			overflow-x: scroll;
 			white-space: nowrap;
 			background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
 		}
@@ -297,10 +296,10 @@ export default {
 			padding: 8px 20px 8px 8px;
 			position: sticky;
 			top: 20px;
-			margin: 20px 20px 0;
+			margin: -25px 20px 0;
 			z-index: 10;
 			border-radius: 50px;
-			background-color: rgba(255, 255, 255, 0.5);
+			background-color: rgba(255, 255, 255, 0.8);
 			backdrop-filter: blur(30px);
 			color: #363636;
 
@@ -354,7 +353,7 @@ export default {
 			font-size: 0.95em;
 			line-height: 2.2;
 
-			padding: 10px 40px 20px;
+			padding: 10px 60px 30px;
 			color: #232323;
 			* {
 				max-width: 100%;
@@ -604,6 +603,8 @@ export default {
 			overflow: hidden;
 			padding: 0 40px 20px;
 			background: rgba(255, 255, 255, 0.8);
+			border-top-right-radius: 20px;
+			border-top-left-radius: 20px;
 			.OwO {
 				padding: 0;
 				white-space: unset;
@@ -649,6 +650,9 @@ export default {
 			}
 			.OwO-item {
 				max-width: unset !important;
+			}
+			.gt-meta {
+				margin: 0.2em 0 1.25em;
 			}
 			.gt-header-textarea {
 				resize: none !important;
@@ -882,7 +886,7 @@ export default {
 				height: 72vw;
 
 				.article-title {
-					padding: 15px 20px;
+					padding: 15px 20px 35px;
 					font-size: 20px;
 				}
 
@@ -892,7 +896,7 @@ export default {
 			}
 
 			.article-banner {
-				padding: 10px 20px;
+				padding: 8px 15px 8px 8px;
 			}
 
 			.article-content {
@@ -904,6 +908,9 @@ export default {
 					width: calc(100% + 40px);
 					font-size: 14px;
 					border-radius: 0;
+					code {
+						border-radius: 0;
+					}
 				}
 				.kg-width-full {
 					margin-left: -20px;
