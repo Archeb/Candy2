@@ -163,6 +163,9 @@ export default {
 
 			setTimeout(() => {
 				this.$refs.modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+				if (!this.$parent.lowPerformance && !this.$parent.mobileMode) {
+					this.$refs.modal.style.backdropFilter = "blur(20px)";
+				}
 			}, 1);
 			this.$refs.modal.querySelector(".bean-read").scrollTop = 0;
 			this.$refs.modal.querySelector(".bean-read").style.transform = "translate(0,0)";
@@ -181,6 +184,9 @@ export default {
 			document.documentElement.addEventListener("keyup", escapeModal);
 		},
 		exitModal: function() {
+			if (!this.$parent.lowPerformance && !this.$parent.mobileMode) {
+				this.$refs.modal.style.backdropFilter = "blur(0px)";
+			}
 			if (window.loadFromList) {
 				this.$router.go(-1);
 			} else {
@@ -200,7 +206,7 @@ export default {
 	visibility: hidden;
 
 	overflow-y: hidden;
-	transition: background-color 0.5s;
+	transition: background-color 0.5s, backdrop-filter 0.5s;
 	height: 100%;
 	z-index: 3;
 
@@ -881,6 +887,7 @@ export default {
 			margin: 0;
 			border-radius: 0;
 			height: 100%;
+			background-color: #e9e8e8;
 
 			.article-cover {
 				height: 72vw;

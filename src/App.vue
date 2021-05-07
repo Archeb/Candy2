@@ -46,7 +46,7 @@ export default {
 			newData.forEach((e) => {
 				//隐藏的tag只能通过指定url进入
 				if (e.tags.some((el) => hideTags.indexOf(el.slug) != -1 && this.$route.params.slug != el.slug)) e.hidden = true;
-				e.dynamicAdded = true;
+				e.dynamicAdded = false; // 禁用动画，测试
 				if (!e.hidden) {
 					e.dynamicAnimationDelay = dynamicAnimationDelay;
 					dynamicAnimationDelay += 150;
@@ -66,7 +66,7 @@ export default {
 			newData.forEach((e) => {
 				//隐藏的tag只能通过指定url进入
 				if (e.tags.some((el) => hideTags.indexOf(el.slug) != -1 && this.$route.params.slug != el.slug)) e.hidden = true;
-				e.dynamicAdded = true;
+				e.dynamicAdded = false; // 禁用动画，测试
 				if (!e.hidden) {
 					e.dynamicAnimationDelay = dynamicAnimationDelay;
 					dynamicAnimationDelay += 150;
@@ -102,14 +102,14 @@ export default {
 					leftTime = Math.floor(window.innerWidth * 0.45 - 99) - this.$refs.container.scrollLeft;
 				}
 				setTimeout(() => {
-					this.$refs[this.currentCb].$el.style.transition = "transform 0.75s";
+					this.$refs[this.currentCb].$el.style.transition = "transform 0.6s";
 					this.$refs[this.currentCb].$el.style.transform = "translate(0,-100vh)";
 					// 添加数据
 					Vue.set(this.categoryData, anotherCb, newData);
 					let leftWidth = -(window.innerWidth / 2 - 100 - this.$refs.container.scrollLeft - window.innerWidth * 0.05);
 					this.$refs[anotherCb].$el.style.transform = "translate(" + leftWidth + "px,100vh)";
 					setTimeout(() => {
-						this.$refs[anotherCb].$el.style.transition = "transform 0.75s";
+						this.$refs[anotherCb].$el.style.transition = "transform 0.6s";
 						this.$refs[anotherCb].$el.style.transform = "translate(" + leftWidth + "px,0vh)";
 						setTimeout(() => {
 							Vue.set(this.categoryData, this.currentCb, []);
@@ -125,7 +125,7 @@ export default {
 							this.$refs[anotherCb].$el.style.transform = "translate(0px,0vh)";
 							this.currentCb = anotherCb;
 							window.animationRunning = false;
-						}, 750);
+						}, 600);
 					}, 50);
 				}, leftTime);
 			}
@@ -169,7 +169,7 @@ export default {
 			this.$refs.container.scrollTo({ behavior: "smooth", left: Math.floor(window.innerWidth * 0.45 - 99) });
 			setTimeout(() => {
 				window.animationRunning = false;
-			}, 750);
+			}, 600);
 		},
 		modalLeave: function(el) {
 			el.style.backgroundColor = "rgba(0, 0, 0, 0)";
