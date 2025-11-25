@@ -1,4 +1,9 @@
-# Candy 2
+此版本主题不适配任何博客平台，已不再维护。请使用本主题的 Hugo 版本
+
+https://github.com/Archeb/candy2-hugo
+
+<details>
+<summary><h2>Candy 2</h2></summary>
 
 [![Candy2.png](https://i.loli.net/2021/02/20/uzfTSEHPlFOeR4r.png)](https://qwq.moe/)
 
@@ -48,7 +53,4 @@
 ## 许可证
 
 使用 GPLv3 许可证开源，商业使用请单独联系我。
-
-## 支持
-
-如果您的钱多得用不完，欢迎通过 ETH 支持我：[0x867FA64803ce5d5eB6885792169393B0F1f30A62](https://etherscan.io/address/0x867FA64803ce5d5eB6885792169393B0F1f30A62)
+</details>
